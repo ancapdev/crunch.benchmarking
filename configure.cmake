@@ -5,7 +5,7 @@ vpm_depend(
   boost
   crunch_base)
 
-include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
+vpm_include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
 
 macro(crunch_add_benchmark _name)
   add_custom_target("run-${_name}"
