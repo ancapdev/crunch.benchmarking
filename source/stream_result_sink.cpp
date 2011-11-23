@@ -103,7 +103,7 @@ void StreamResultSink::Add(double value)
     mRows.back().push_back(std::make_pair(mTempStream.str(), false));
 }
 
-void StreamResultSink::Add(int32 value)
+void StreamResultSink::Add(std::int32_t value)
 {
     mTempStream.str("");
     mTempStream << value;

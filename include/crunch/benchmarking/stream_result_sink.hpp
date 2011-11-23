@@ -28,7 +28,7 @@ public:
     virtual void EndRow();
 
     virtual void Add(double value);
-    virtual void Add(int32 value);
+    virtual void Add(std::int32_t value);
     virtual void Add(const std::string& value);
 
 private:

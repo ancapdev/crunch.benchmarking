@@ -5,8 +5,8 @@
 #define CRUNCH_BENCHMARKING_RESULT_TABLE_DESCRIPTOR_HPP
 
 #include "crunch/base/enum_class.hpp"
-#include "crunch/base/stdint.hpp"
 
+#include <cstdint>
 #include <vector>
 
 namespace Crunch { namespace Benchmarking {
@@ -21,7 +21,7 @@ CRUNCH_ENUM_CLASS ColumnType : int
 class ResultTableDescriptor
 {
 public:
-    ResultTableDescriptor(const char* name, uint32 version)
+    ResultTableDescriptor(const char* name, std::uint32_t version)
         : mName(name)
         , mVersion(version)
     {}
@@ -31,7 +31,7 @@ public:
         return mName;
     }
 
-    uint32 GetVersion() const
+    std::uint32_t GetVersion() const
     {
         return mVersion;
     }
@@ -65,7 +65,7 @@ private:
     };
 
     char const* mName;
-    uint32 mVersion;
+    std::uint32_t mVersion;
     std::vector<ColumnDescriptor> mColumns;
 };
 

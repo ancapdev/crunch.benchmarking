@@ -24,6 +24,9 @@ macro(crunch_add_benchmark _name)
     WORKING_DIRECTORY ${CMAKE_CURRENTY_BINARY_DIR}
     VERBATIM)
 
+  # Exclude benchmark run from default build in Visual Studio
+  set_target_properties("run-${_name}" PROPERTIES EXCLUDE_FROM_DEFAULT_BUILD TRUE)
+
   # Add dependencies on shared build and run targets
   add_dependencies(build-benchmarks ${_name})
   add_dependencies(run-benchmarks "run-${_name}")

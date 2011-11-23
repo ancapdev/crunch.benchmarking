@@ -29,7 +29,7 @@ namespace Detail
 
     template<typename T> ColumnType GetColumnType();
     template<> inline ColumnType GetColumnType<double>() { return ColumnType::Float64; }
-    template<> inline ColumnType GetColumnType<int32>() { return ColumnType::Int32; }
+    template<> inline ColumnType GetColumnType<std::int32_t>() { return ColumnType::Int32; }
     template<> inline ColumnType GetColumnType<std::string>() { return ColumnType::String; }
     template<> inline ColumnType GetColumnType<char const*>() { return ColumnType::String; }
 
@@ -76,7 +76,7 @@ public:
     typedef RowType_ RowType;
     typedef typename Detail::ColumnNameTuple<RowType>::Type ColumnNameType;
 
-    ResultTable(char const* name, uint32 version, ColumnNameType const& columnNames, IResultSink& sink = GetResultSink());
+    ResultTable(char const* name, std::uint32_t version, ColumnNameType const& columnNames, IResultSink& sink = GetResultSink());
 
     ~ResultTable();
 
@@ -87,7 +87,7 @@ private:
 };
 
 template<typename R>
-ResultTable<R>::ResultTable(char const* name, uint32 version, ColumnNameType const& columnNames, IResultSink& sink)
+ResultTable<R>::ResultTable(char const* name, std::uint32_t version, ColumnNameType const& columnNames, IResultSink& sink)
     : mSink(sink)
 {
     ResultTableDescriptor descriptor(name, version);

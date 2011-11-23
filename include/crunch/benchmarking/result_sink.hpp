@@ -4,8 +4,7 @@
 #ifndef CRUNCH_BENCHMARKING_RESULT_SINK_HPP
 #define CRUNCH_BENCHMARKING_RESULT_SINK_HPP
 
-#include "crunch/base/stdint.hpp"
-
+#include <cstdint>
 #include <string>
 
 namespace Crunch { namespace Benchmarking {
@@ -21,7 +20,7 @@ struct IResultSink
     virtual void EndRow() = 0;
 
     virtual void Add(double value) = 0;
-    virtual void Add(int32 value) = 0;
+    virtual void Add(std::int32_t value) = 0;
     virtual void Add(const std::string& value) = 0;
 };
 
