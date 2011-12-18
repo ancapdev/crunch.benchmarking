@@ -4,6 +4,8 @@
 #ifndef CRUNCH_BENCHMARKING_STATISTICAL_PROFILER_HPP
 #define CRUNCH_BENCHMARKING_STATISTICAL_PROFILER_HPP
 
+#include "crunch/benchmarking/api.hpp"
+
 #include <vector>
 
 namespace Crunch { namespace Benchmarking {
@@ -11,24 +13,24 @@ namespace Crunch { namespace Benchmarking {
 class StatisticalProfiler
 {
 public:
-    StatisticalProfiler(double targetNormStdDev, std::size_t minSamples, std::size_t maxSamples, std::size_t samplesPerCalculation = 1);
+    CRUNCH_BENCHMARKING_API StatisticalProfiler(double targetNormStdDev, std::size_t minSamples, std::size_t maxSamples, std::size_t samplesPerCalculation = 1);
 
-    void AddSample(double sample);
+    CRUNCH_BENCHMARKING_API void AddSample(double sample);
 
-    void Reset();
+    CRUNCH_BENCHMARKING_API void Reset();
 
-    bool IsDone() const;
+    CRUNCH_BENCHMARKING_API bool IsDone() const;
 
-    std::size_t GetNumSamples() const;
-    double GetMin() const;
-    double GetMax() const;
-    double GetMean() const;
-    double GetMedian() const;
-    double GetStdDev() const;
-    double GetRawMin() const;
-    double GetRawMax() const;
-    double GetRawMean() const;
-    double GetRawStdDev() const;
+    CRUNCH_BENCHMARKING_API std::size_t GetNumSamples() const;
+    CRUNCH_BENCHMARKING_API double GetMin() const;
+    CRUNCH_BENCHMARKING_API double GetMax() const;
+    CRUNCH_BENCHMARKING_API double GetMean() const;
+    CRUNCH_BENCHMARKING_API double GetMedian() const;
+    CRUNCH_BENCHMARKING_API double GetStdDev() const;
+    CRUNCH_BENCHMARKING_API double GetRawMin() const;
+    CRUNCH_BENCHMARKING_API double GetRawMax() const;
+    CRUNCH_BENCHMARKING_API double GetRawMean() const;
+    CRUNCH_BENCHMARKING_API double GetRawStdDev() const;
 
 private:
     void UpdateStatistics() const;

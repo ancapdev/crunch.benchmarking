@@ -5,6 +5,7 @@
 #define CRUNCH_BENCHMARKING_STREAM_RESULT_SINK_HPP
 
 #include "crunch/base/noncopyable.hpp"
+#include "crunch/benchmarking/api.hpp"
 #include "crunch/benchmarking/result_sink.hpp"
 #include "crunch/benchmarking/result_table_descriptor.hpp"
 
@@ -19,7 +20,7 @@ namespace Crunch { namespace Benchmarking {
 class StreamResultSink : public IResultSink, NonCopyable
 {
 public:
-    StreamResultSink(std::ostream& stream, bool showProgress = true);
+    CRUNCH_BENCHMARKING_API StreamResultSink(std::ostream& stream, bool showProgress = true);
 
     virtual void BeginTable(ResultTableDescriptor const& descriptor);
     virtual void EndTable();

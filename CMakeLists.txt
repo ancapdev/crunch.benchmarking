@@ -4,6 +4,7 @@
 include(configure.cmake)
 
 vpm_add_library(crunch_benchmarking_lib
+  include/crunch/benchmarking/api.hpp
   include/crunch/benchmarking/result_sink.hpp
   include/crunch/benchmarking/result_table.hpp
   include/crunch/benchmarking/result_table_descriptor.hpp

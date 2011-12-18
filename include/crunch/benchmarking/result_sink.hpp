@@ -4,6 +4,8 @@
 #ifndef CRUNCH_BENCHMARKING_RESULT_SINK_HPP
 #define CRUNCH_BENCHMARKING_RESULT_SINK_HPP
 
+#include "crunch/benchmarking/api.hpp"
+
 #include <cstdint>
 #include <string>
 
@@ -24,7 +26,7 @@ struct IResultSink
     virtual void Add(const std::string& value) = 0;
 };
 
-IResultSink& GetResultSink();
+CRUNCH_BENCHMARKING_API IResultSink& GetResultSink();
 
 }}
 
