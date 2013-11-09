@@ -1,9 +1,10 @@
-# Copyright (c) 2011, Christian Rorvik
+# Copyright (c) 2011-2013, Christian Rorvik
 # Distributed under the Simplified BSD License (See accompanying file LICENSE.txt)
 
-vpm_set_default_versions(
-  boost proxy
-  crunch.base trunk)
+vpm_set_default_variant(boost proxy)
+vpm_set_default_version(boost 1.53.0)
+
+vpm_set_default_version(crunch.base master)
 
 vpm_depend(
   boost
