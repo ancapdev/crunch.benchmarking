@@ -1,7 +1,7 @@
-# Copyright (c) 2011, Christian Rorvik
+# Copyright (c) 2011-2013, Christian Rorvik
 # Distributed under the Simplified BSD License (See accompanying file LICENSE.txt)
 
-include(configure.cmake)
+vpm_depend_self()
 
 vpm_add_library(crunch_benchmarking_lib
   include/crunch/benchmarking/api.hpp
@@ -16,5 +16,4 @@ vpm_add_library(crunch_benchmarking_lib
   source/stream_result_sink.cpp)
 
 target_link_libraries(crunch_benchmarking_lib
-  crunch_base_lib
-  crunch_test_lib)
+  crunch_base_lib)

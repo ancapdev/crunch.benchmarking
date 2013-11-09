@@ -4,15 +4,21 @@
 vpm_set_default_variant(boost proxy)
 vpm_set_default_version(boost 1.53.0)
 
-vpm_set_default_version(crunch.base master)
+vpm_set_default_versions(
+  crunch.base master
+  crunch.test master)
 
 vpm_depend(
   boost
-  crunch.base)
+  crunch.base
+  crunch.test)
 
 vpm_include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
 
 macro(crunch_add_benchmark _name)
+  crunch_add_test_executable(${_name} ${ARGN})
+  target_link_libraries(${_name} crunch_benchmarking_lib)
+
   # Shared build target for all benchmarks
   if(NOT TARGET build-benchmarks)
     add_custom_target(build-benchmarks)
